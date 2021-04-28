@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-image: url(kelly-sikkema-GVeY-j1yrUE-unsplash.jpg);
+  min-height: 100vh;
+  background-position: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.countdown-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.big-text{
+    font-size: 5rem;
+    line-height: 1;
+    margin: 0 2rem;
+    color: white;
+    padding-top: 12rem;
+}
+span{
+    color: white;
+    margin: 0 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
