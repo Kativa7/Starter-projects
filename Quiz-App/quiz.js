@@ -1,0 +1,57 @@
+export const quizData = [
+  {
+    question: "Inside which HTML element do we put the JavaScript?",
+    a: "<javascript>",
+    b: "<scripting>",
+    c: "<js>",
+    d: "<script>",
+    correct: "d",
+  },
+  {
+    question: "How do you create a function in JavaScript?",
+    a: "function:myFunction()",
+    b: "function = myFunction()",
+    c: "function myFunction()",
+    d: "function - myFunction",
+    correct: "c",
+  },
+  {
+    question: "How to write an IF statement in JavaScript?",
+    a: "if (i==5)",
+    b: "if i = 5",
+    c: "if i == 5 then",
+    d: "if i = 5 then",
+    correct: "a",
+  },
+  {
+    question: "How do you round the number 7.25, to the nearest integer?",
+    a: "round(7.25)",
+    b: "Math.rnd(7.25)",
+    c: "rnd(7.25)",
+    d: "Math.round(7.25)",
+    correct: "d",
+  },
+  {
+    question: "JavaScript is the same as Java.",
+    a: "True",
+    b: "False",
+    c: "I don't know",
+    d: "Pass",
+    correct: "b",
+  },
+  {
+    question: "Who is your favourite?",
+    a: "Katy",
+    b: "Masha",
+    c: "Baby",
+    d: "Mitko",
+    correct: "a",
+  },{
+    question: "Кого обича най-много Митко?",
+    a: "Кати",
+    b: "Маши",
+    c: "Бебе-ембрион",
+    d: "Митко",
+    correct: "c",
+  }
+];
