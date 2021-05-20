@@ -33,10 +33,10 @@ function animationSlides() {
       .addTo(controller);
 
     const pageTl = gsap.timeline();
-    let nextSlide = slides.length - 1 === index ? 'end' : slides[index + 1];
-    pageTl.fromTo(nextSlide, {y: '0%'}, {y: '50%'});
+    let nextSlide = slides.length - 1 === index ? "end" : slides[index + 1];
+    pageTl.fromTo(nextSlide, { y: "0%" }, { y: "50%" });
     pageTl.fromTo(slide, { opacity: 1, scale: 1 }, { opacity: 0, scale: 0.5 });
-    pageTl.fromTo(nextSlide, {y: '50%'}, {y: '0%'}, '-=0.5');
+    pageTl.fromTo(nextSlide, { y: "50%" }, { y: "0%" }, "-=0.5");
 
     pageScene = new ScrollMagic.Scene({
       triggerElement: slide,
@@ -47,11 +47,42 @@ function animationSlides() {
         colorStart: "white",
         colorTrigger: "white",
         name: "page",
-        indent: 200
+        indent: 200,
       })
-      .setPin(slide, {pushFollowers: false})
+      .setPin(slide, { pushFollowers: false })
       .setTween(pageTl)
       .addTo(controller);
   });
 }
+
+let mouse = document.querySelector(".cursor");
+let mouseText = mouse.querySelector("span");
+function cursors(e) {
+  mouse.style.top = e.pageY + "px";
+  mouse.style.left = e.pageX + "px";
+}
+
+function activeCursor(e) {
+  const item = e.target;
+  if (item.id == "logo" || item.classList.contains("burger")) {
+    mouse.classList.add("nav-active");
+  } else {
+    mouse.classList.remove("nav-active");
+  }
+  if(item.classList.contains("explore")){
+    mouse.classList.add("explore-active");
+    gsap.to(".title-swipe",1,{y:"0%"});
+    mouseText.innerText = "Tap"
+  
+  }else{
+    mouse.classList.remove("explore-active");
+    mouseText.innerText = ""
+    gsap.to(".title-swipe",1,{y:"100%"});
+
+  }
+}
+
+window.addEventListener("mousemove", cursors);
+window.addEventListener("mouseover", activeCursor);
+
 animationSlides();
